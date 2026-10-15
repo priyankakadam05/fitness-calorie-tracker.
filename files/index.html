@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitness Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>Fitness Calorie Tracker</h1>
+      <p>Enter the calories you burned each day and see how your week adds up.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="input-title">
+      <h2 id="input-title">Calories burned this week</h2>
+      <p class="hint">Whole numbers from 0 to 5000 only. The seven fields are created by script.js.</p>
+      <form id="calorieForm" novalidate>
+        <div id="inputGrid" class="input-grid"></div>
+        <div class="buttons">
+          <button type="submit" class="btn primary">Calculate Summary</button>
+          <button type="button" id="sampleBtn" class="btn secondary">Load Sample Data</button>
+          <button type="button" id="resetBtn" class="btn ghost">Reset All</button>
+        </div>
+        <p id="formMessage" class="form-message" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="results" hidden aria-live="polite">
+      <div class="cards">
+        <article class="card"><h3>Weekly total</h3><p id="totalValue" class="big"></p></article>
+        <article class="card"><h3>Daily average</h3><p id="averageValue" class="big"></p></article>
+        <article class="card"><h3>Highest day</h3><p id="highestDays" class="big small"></p><p id="highestValue" class="sub"></p></article>
+        <article class="card"><h3>Lowest day</h3><p id="lowestDays" class="big small"></p><p id="lowestValue" class="sub"></p></article>
+        <article class="card"><h3>Highest minus lowest</h3><p id="differenceValue" class="big"></p></article>
+      </div>
+
+      <div class="panel status-panel">
+        <div class="status-row">
+          <span id="statusBadge" class="badge"></span>
+          <p id="statusText"></p>
+        </div>
+        <p class="note">Academic project rule only (2500 kcal per week). This is not a medical fitness assessment.</p>
+        <div class="progress-head"><span>Progress to target</span><span id="progressLabel"></span></div>
+        <div id="progressTrack" class="track" role="progressbar" aria-label="Weekly progress toward 2500 calories" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progressFill" class="fill"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Day-wise calories</h2>
+        <div id="chart" class="chart" role="img" aria-label="Bar chart of calories burned per day"></div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
